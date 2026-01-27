@@ -1,0 +1,48 @@
+PCOS DIAGNOSTIC RULES
+======================================================================
+
+Rules extracted from Decision Tree trained on optimized features
+(Blob detection threshold: 0.130, Cohen's d = 2.691)
+
+======================================================================
+
+FEATURE EFFECT SIZES (Cohen's d):
+- follicle_count:           2.900 (STRONGEST)
+- follicle_density:         2.900 (STRONGEST)
+- peripheral_distribution:  1.635 (Large)
+- avg_follicle_size:        1.397 (Large)
+- stromal_echogenicity:     1.267 (Large)
+- ovarian_circularity:      1.087 (Large)
+
+======================================================================
+
+DECISION TREE RULES:
+
+|--- follicle_count <= 35.50
+|   |--- peripheral_distribution <= 0.96
+|   |   |--- ovarian_circularity <= 0.13
+|   |   |   |--- stromal_echogenicity <= 69.39
+|   |   |   |   |--- class: 1
+|   |   |   |--- stromal_echogenicity >  69.39
+|   |   |   |   |--- class: 0
+|   |   |--- ovarian_circularity >  0.13
+|   |   |   |--- avg_follicle_size <= 6.72
+|   |   |   |   |--- class: 0
+|   |   |   |--- avg_follicle_size >  6.72
+|   |   |   |   |--- class: 0
+|   |--- peripheral_distribution >  0.96
+|   |   |--- ovarian_circularity <= 0.17
+|   |   |   |--- class: 1
+|   |   |--- ovarian_circularity >  0.17
+|   |   |   |--- class: 1
+|--- follicle_count >  35.50
+|   |--- avg_follicle_size <= 4.95
+|   |   |--- ovarian_circularity <= 0.57
+|   |   |   |--- class: 0
+|   |   |--- ovarian_circularity >  0.57
+|   |   |   |--- class: 0
+|   |--- avg_follicle_size >  4.95
+|   |   |--- stromal_echogenicity <= 48.49
+|   |   |   |--- class: 1
+|   |   |--- stromal_echogenicity >  48.49
+|   |   |   |--- class: 1
