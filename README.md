@@ -1,4 +1,4 @@
-# Neuro-Symbolic_PCOS-Detection-FYP
+# Neuro-Symbolic-PCOS-Detection-FYP
 # PCOS Detection using Ultrasound Images
 
 This project investigates automated detection of Polycystic Ovary Syndrome (PCOS)
