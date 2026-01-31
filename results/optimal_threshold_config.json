@@ -1,0 +1,11 @@
+{
+    "recommended_threshold": 0.7399999999999997,
+    "method": "cost_sensitive",
+    "test_accuracy_at_recommended": 0.9346733668341709,
+    "test_sensitivity_at_recommended": 0.9558232931726908,
+    "test_specificity_at_recommended": 0.9195402298850575,
+    "false_negatives": 11,
+    "false_positives": 28,
+    "default_threshold_accuracy": 0.8023,
+    "default_threshold": 0.5
+}
