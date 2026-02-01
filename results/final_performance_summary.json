@@ -1,0 +1,52 @@
+{
+    "methodology": "Proper train/validation/test split methodology",
+    "optimization_set": "validation",
+    "evaluation_set": "test",
+    "cnn_only_test": {
+        "accuracy": 0.6063651591289783,
+        "auc": 0.9773807875178875,
+        "f1_score": 0.6767537826685007,
+        "threshold": 0.5
+    },
+    "rules_only_test": {
+        "accuracy": 0.9698492462311558,
+        "auc": 0.9887769468679315,
+        "f1_score": 0.964,
+        "threshold": 0.5
+    },
+    "ensemble": {
+        "alpha": 0.5,
+        "threshold": 0.6935535539909568,
+        "threshold_method": "F1-Score Maximization",
+        "validation_performance": {
+            "threshold": 0.6935535539909568,
+            "accuracy": 0.9697986577181208,
+            "sensitivity": 0.9397590361445783,
+            "specificity": 0.9913544668587896,
+            "precision": 0.9873417721518988,
+            "f1_score": 0.962962962962963,
+            "tp": 234,
+            "tn": 344,
+            "fp": 3,
+            "fn": 15
+        },
+        "test_performance": {
+            "accuracy": 0.9765494137353434,
+            "sensitivity": 0.9598393574297188,
+            "specificity": 0.9885057471264368,
+            "precision": 0.9835390946502057,
+            "f1_score": 0.9715447154471544,
+            "auc": 0.9869939528227852,
+            "tp": 239,
+            "tn": 344,
+            "fp": 4,
+            "fn": 10
+        }
+    },
+    "generalization_analysis": {
+        "accuracy_gap": 0.006750756017222637,
+        "sensitivity_gap": 0.02008032128514048,
+        "specificity_gap": -0.002848719732352789,
+        "f1_gap": 0.008581752484191352
+    }
+}
