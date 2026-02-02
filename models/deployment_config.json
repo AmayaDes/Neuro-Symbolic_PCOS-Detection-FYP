@@ -1,0 +1,35 @@
+{
+    "model_version": "1.0",
+    "methodology": "Hyperparameters optimized on validation set, final evaluation on test set",
+    "ensemble_alpha": 0.5,
+    "decision_threshold": 0.6935535539909568,
+    "threshold_method": "F1-Score Maximization",
+    "validation_performance": {
+        "accuracy": 0.9697986577181208,
+        "sensitivity": 0.9397590361445783,
+        "specificity": 0.9913544668587896,
+        "precision": 0.9873417721518988,
+        "f1_score": 0.962962962962963
+    },
+    "test_performance": {
+        "accuracy": 0.9765494137353434,
+        "sensitivity": 0.9598393574297188,
+        "specificity": 0.9885057471264368,
+        "precision": 0.9835390946502057,
+        "f1_score": 0.9715447154471544,
+        "auc": 0.9869939528227852
+    },
+    "clinical_interpretation": {
+        "true_positives": 239,
+        "true_negatives": 344,
+        "false_positives": 4,
+        "false_negatives": 10,
+        "missed_pcos_cases": 10,
+        "unnecessary_followups": 4
+    },
+    "cost_ratio_justification": "FN cost = 5 (missed diagnosis has higher clinical impact), FP cost = 1 (unnecessary follow-up has minimal risk)",
+    "model_paths": {
+        "cnn_model": "/content/cnn_training_results/final_model.keras",
+        "decision_tree": "/content/decision_tree_model.pkl"
+    }
+}
