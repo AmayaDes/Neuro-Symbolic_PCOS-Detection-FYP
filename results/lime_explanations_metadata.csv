@@ -1,0 +1,11 @@
+image_id,true_label,cnn_prediction,rule_score,ensemble_score,correct,explanation_path
+Dataset-1_data_train_img_0_8403.jpg,PCOS,0.9998777,1.0,0.9999388456344604,1,/content/lime_explanations/lime_explanation_Dataset-1_data_train_img_0_8403.jpg.png
+Dataset-1_data_train_img_0_8749.jpg,PCOS,0.9884526,1.0,0.994225800037384,1,/content/lime_explanations/lime_explanation_Dataset-1_data_train_img_0_8749.jpg.png
+Dataset-2_roboflow_train_img_0_6176_jpg.rf.22137c5f0f540a86ce6a2d64e70a9810.jpg,Normal,0.4226084,0.0156942717119229,0.2191462572358137,1,/content/lime_explanations/lime_explanation_Dataset-2_roboflow_train_img_0_6176_jpg.rf.22137c5f0f540a86ce6a2d64e70a9810.jpg.png
+Dataset-2_roboflow_train_img_0_2347_jpg.rf.b248ddfc4d0af33adb73866958be396b.jpg,Normal,0.47975144,0.0156942717119229,0.2477194126389509,1,/content/lime_explanations/lime_explanation_Dataset-2_roboflow_train_img_0_2347_jpg.rf.b248ddfc4d0af33adb73866958be396b.jpg.png
+Dataset-1_data_train_img_0_944.jpg,Normal,0.68099326,0.8479455639884848,0.7644685770057628,0,/content/lime_explanations/lime_explanation_Dataset-1_data_train_img_0_944.jpg.png
+Dataset-1_data_train_img1.jpeg,Normal,0.80176187,1.0,0.9008775949478148,0,/content/lime_explanations/lime_explanation_Dataset-1_data_train_img1.jpeg.png
+Dataset-2_roboflow_train_img_0_8590_jpg.rf.42d2276705fcd374c6fd095225eca370.jpg,PCOS,0.44974223,0.0156942717119229,0.2327189650080686,0,/content/lime_explanations/lime_explanation_Dataset-2_roboflow_train_img_0_8590_jpg.rf.42d2276705fcd374c6fd095225eca370.jpg.png
+Dataset-1_data_train_img_0_5783.jpg,PCOS,0.5422161,0.0156942717119229,0.2789512034199721,0,/content/lime_explanations/lime_explanation_Dataset-1_data_train_img_0_5783.jpg.png
+Dataset-1_data_train_img_0_242.jpg,PCOS,0.7476994,0.7432960609047344,0.7454891373439994,1,/content/lime_explanations/lime_explanation_Dataset-1_data_train_img_0_242.jpg.png
+Dataset-1_data_train_img_0_4408.jpg,Normal,0.642565,0.7432960609047344,0.692934917382833,1,/content/lime_explanations/lime_explanation_Dataset-1_data_train_img_0_4408.jpg.png
