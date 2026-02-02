@@ -10,7 +10,7 @@ Original file is located at
 import cv2
 from pcos_system import PCOSProductionSystem
 
-system = PCOSProductionSystem(base_dir="..")
+system = PCOSProductionSystem(model_dir="../models")
 
 img = cv2.imread("test_image.jpg")
 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
