@@ -3,6 +3,6 @@ opencv-python
 numpy
 matplotlib
 scikit-learn
-joblib
+scipy
 lime
 scikit-image
