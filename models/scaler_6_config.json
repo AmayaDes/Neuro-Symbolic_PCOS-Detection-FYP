@@ -1,0 +1,39 @@
+{
+    "version": "1.0",
+    "selection_method": "Dynamic Cohen's d calculation",
+    "selection_threshold": 1.0,
+    "n_features": 6,
+    "feature_names": [
+        "follicle_count",
+        "follicle_density",
+        "peripheral_distribution",
+        "avg_follicle_size",
+        "stromal_echogenicity",
+        "ovarian_circularity"
+    ],
+    "cohens_d_values": {
+        "follicle_count": 2.9004706844021415,
+        "follicle_density": 2.900470684402138,
+        "peripheral_distribution": 1.6347342193238033,
+        "avg_follicle_size": 1.3973894917003649,
+        "stromal_echogenicity": 1.2668536478441508,
+        "ovarian_circularity": 1.086533777223317
+    },
+    "excluded_features": {
+        "ovarian_area_index": {
+            "cohens_d": 0.1082949315724854,
+            "reason": "Below threshold (d \u2264 1.0)"
+        },
+        "texture_heterogeneity": {
+            "cohens_d": 0.5436325094154189,
+            "reason": "Below threshold (d \u2264 1.0)"
+        },
+        "speckle_index": {
+            "cohens_d": 0.6531727134455176,
+            "reason": "Below threshold (d \u2264 1.0)"
+        }
+    },
+    "training_samples": 2782,
+    "pcos_samples": 1162,
+    "normal_samples": 1620
+}
