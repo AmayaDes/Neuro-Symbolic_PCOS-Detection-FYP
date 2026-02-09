@@ -1,97 +1,174 @@
-# Neuro-Symbolic-PCOS-Detection-FYP  
-PCOS Detection Using Ultrasound Images
-
-## Project Overview  
-This project presents a neuro-symbolic AI system for automated detection of Polycystic Ovary Syndrome (PCOS) from ovarian ultrasound images.  
-The system integrates deep learning (CNN), symbolic rule-based reasoning, and LIME explainability to provide both accurate predictions and clinically interpretable outputs.
+# Neuro-Symbolic PCOS Detection System  
+Hybrid AI Pipeline for Interpretable Ultrasound Diagnosis
 
 ---
 
-## Dataset  
-The dataset was created by merging two public datasets:
+## Project Summary
 
-Kaggle: https://www.kaggle.com/datasets/anaghachoudhari/pcos-detection-using-ultrasound-images  
-Roboflow: https://universe.roboflow.com/pcos-a0bjy/pcos-te6mi  
+This project implements a neuro-symbolic AI system for automated detection of Polycystic Ovary Syndrome (PCOS) from ovarian ultrasound images. The architecture integrates deep learning, symbolic reasoning, and explainability to produce accurate and interpretable predictions.
 
-The processed dataset (train/validation/test split) is hosted on Kaggle:  
-https://www.kaggle.com/datasets/amayajayarathna/pcos-ultrasound-dataset-trainvaltest-split  
+Rather than being a standalone ML experiment, the system is designed as a modular inference pipeline that separates feature extraction, neural prediction, rule-based reasoning, ensemble fusion, and explanation generation — mirroring real-world production AI workflows.
 
 ---
 
-## System Pipeline  
-1. Data preparation and deduplication  
-2. Feature extraction (blob detection + texture features)  
-3. Rule extraction using decision tree  
-4. CNN training using EfficientNetB0  
-5. Ensemble prediction (CNN + Rules)  
-6. LIME-based explainability  
+## System Architecture
+
+```
+========================================================
+        Neuro-Symbolic PCOS Detection Architecture
+========================================================
+
+                ┌────────────────────┐
+                │   User Interface   │
+                │   (Streamlit UI)   │
+                └─────────┬──────────┘
+                          │ upload image
+                          ▼
+                ┌────────────────────┐
+                │ Feature Extraction │
+                │ blob + texture     │
+                └─────────┬──────────┘
+                          │ features
+          ┌───────────────┴───────────────┐
+          ▼                               ▼
+┌───────────────────┐           ┌───────────────────┐
+│    CNN Model      │           │ Decision Tree     │
+│ EfficientNetB0    │           │ symbolic rules    │
+└─────────┬─────────┘           └─────────┬─────────┘
+          │ cnn score                     │ rule score
+          └───────────────┬───────────────┘
+                          ▼
+                ┌────────────────────┐
+                │     Ensemble       │
+                │ score fusion       │
+                └─────────┬──────────┘
+                          │ prediction
+                          ▼
+                ┌────────────────────┐
+                │  LIME Explainer    │
+                │ interpretability   │
+                └─────────┬──────────┘
+                          ▼
+                ┌────────────────────┐
+                │ Final Result + UI  │
+                └────────────────────┘
+
+========================================================
+```
+
+The pipeline processes ultrasound images through modular components. Neural inference and symbolic reasoning operate independently and are combined through ensemble logic, with LIME providing interpretable explanations for predictions.
+
+---
+
+## Engineering Perspective
+
+This system was built with architectural clarity and modularity in mind. Each component — preprocessing, feature extraction, neural classification, symbolic reasoning, ensemble fusion, and explanation — is implemented as an independent stage within a structured pipeline.
+
+Key goals included:
+
+- Separation of concerns across inference stages  
+- Hybrid decision integration (neural + symbolic)  
+- Reproducible data processing workflow  
+- Explainability embedded in prediction flow  
+- Clear system boundaries between backend logic and UI  
+
+The structure reflects production-style AI system design rather than experimental notebook workflows.
+
+---
+
+## Dataset
+
+The dataset was created by merging two public ultrasound datasets and applying preprocessing and deduplication steps to ensure consistency.
+
+Sources:
+
+- Kaggle PCOS ultrasound dataset  
+- Roboflow PCOS dataset  
+
+A processed train/validation/test split is hosted separately to support reproducibility.
+
+---
+
+## Pipeline Overview
+
+1. Image preprocessing and deduplication  
+2. Feature extraction (blob detection + texture analysis)  
+3. CNN classification using EfficientNetB0  
+4. Symbolic rule evaluation via decision tree  
+5. Ensemble score fusion  
+6. LIME explanation generation  
 7. Visualization through Streamlit UI  
 
 ---
 
-## Requirements  
-Python 3.9+  
-TensorFlow  
-OpenCV  
-Streamlit  
-scikit-learn  
-lime  
-joblib  
-matplotlib  
-seaborn  
-pandas  
-numpy  
+## Project Structure
 
-Install all dependencies using:     pip install -r requirements.txt  
-
----
-
-## Project Structure  
-
-Neuro-Symbolic-PCOS-Detection-FYP/  
-├── src/  
-│   ├── frontend/       Streamlit UI  
-│   └── backend/        PCOSProductionSystem (CNN + Rules + LIME)  
-│  
-├── models/             Trained CNN + Decision Tree  
-├── notebooks/          Training and feature extraction  
-├── results/            Evaluation outputs  
-├── demo.py             Terminal-based demo  
-└── README.md  
+```
+Neuro-Symbolic-PCOS-Detection-FYP/
+│
+├── src/
+│   ├── frontend/      Streamlit interface and visualization
+│   └── backend/       Inference pipeline + ensemble logic
+│
+├── models/            Trained CNN and decision tree artifacts
+├── notebooks/         Training and feature engineering workflows
+├── results/           Evaluation outputs and metrics
+├── demo.py            Terminal demonstration script
+└── README.md
+```
 
 ---
 
-## How to Run (Web Interface)
+## Installation
 
-1. Go inside the folder
-cd Neuro-Symbolic-PCOS-Detection-FYP  
+### Requirements
 
-2. Install dependencies:
+- Python 3.9+
+- TensorFlow
+- OpenCV
+- Streamlit
+- scikit-learn
+- lime
+- pandas / numpy
+- matplotlib / seaborn
 
-pip install -r requirements.txt  
+Install dependencies:
 
-3. Run the Streamlit application:
+```
+pip install -r requirements.txt
+```
 
-streamlit run src/frontend/app.py  
+---
 
-4. Open the browser and upload an ultrasound image to receive prediction and explanation.
+## Running the Web Interface
+
+```
+cd Neuro-Symbolic-PCOS-Detection-FYP
+streamlit run src/frontend/app.py
+```
+
+Upload an ultrasound image to receive prediction and explanation.
 
 ---
 
 ## Demo Mode (Terminal)
 
-To run without the web interface:
-
-python demo.py  
-
----
-
-## Reproducibility  
-All experiments can be reproduced by running the notebooks in the notebooks folder in order.
+```
+python demo.py
+```
 
 ---
 
-## Disclaimer  
+## Reproducibility
+
+All experiments and model training steps can be reproduced by running notebooks in the `notebooks/` directory sequentially.
+
+---
+
+## Disclaimer
+
 This system is a research prototype developed for academic purposes only.  
-It is not a certified medical device and must not be used for clinical diagnosis.  
-All outputs should be interpreted by a qualified medical professional.
+It is **not** a certified medical device and must not be used for clinical diagnosis.
+
+---
+
